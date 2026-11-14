@@ -686,3 +686,48 @@ Already phpMyAdmin / XAMPP use karta hoon.
 Continue to setup
 
 **Mera suggestion:** Hum MySQL 8.x use karenge. Har query tum khud execute karoge, output share karoge, aur main code review karunga. Bilkul waise hi jaise real development mein database engineer kaam karta hai. 💪
+Here are the core SQL concepts and commands explained in clear: 
+
+### 1. Key Concepts
+
+* **Primary Key:** A unique column that identifies every single row in a table. It cannot be empty (`NULL`) and cannot have duplicate values (like a Student ID).
+* **Foreign Key:** A column that connects one table to the primary key of another table, creating a relationship between them.
+
+---
+
+### 2. Database Commands
+
+* **`CREATE DATABASE`**: Creates a brand new database.
+* **`SHOW DATABASES`**: Lists all databases on your server.
+* **`USE`**: Selects which database you want to work inside.
+* **`DROP DATABASE`**: Deletes an entire database permanently.
+
+---
+
+### 3. Table & Data Commands
+
+* **`CREATE TABLE`**: Makes a new table with specific columns and rules.
+* **`SHOW TABLES`**: Shows a list of all tables in your current database.
+* **`SELECT`**: Reads or fetches data from a table.
+* **`INSERT INTO`**: Adds new rows of data into a table.
+* **`UPDATE`**: Modifies or changes existing data in a table.
+* **`DELETE`**: Removes rows from a table.
+* **`DESCRIBE`**: Shows the structure (columns and data types) of a table.
+
+---
+
+### 4. Alter Commands (Modifying Structure)
+
+* **`ADD COLUMN`**: Adds a new column to an existing table.
+* **`MODIFY COLUMN`**: Changes the data type or size of an existing column.
+* **`DROP COLUMN`**: Deletes a specific column from a table.
+* **`RENAME COLUMN`**: Changes the name of an existing column.
+* **`RENAME TABLE`**: Changes the name of an entire table.
+
+---
+
+### 5. Deletion Commands
+
+* **`TRUNCATE TABLE`**: Deletes all data inside a table instantly while keeping the table structure safe.
+* **`DROP TABLE`**: Deletes both the table and all its data permanently.
+
