@@ -1,0 +1,36 @@
+Part 4 – Mini Project
+Applied Practice
+E-commerce Product Search System
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+Scenario: Tum ek e-commerce application ke database developer ho.
+
+Ek products table create karo aur minimum 15 products insert karo.
+
+Required columns:
+Column	Data type
+product_id	INT
+product_name	VARCHAR(100)
+category	VARCHAR(50)
+price	DECIMAL(10,2)
+stock	INT
+
+Project Requirements
+1. All products retrieve karo.
+2. Electronics category ke products find karo.
+3. Price 500 se 5000 ke beech wale products.
+4. Stock 0 se zyada wale products.
+5. Top 5 expensive products.
+6. Product names jo S se start hote hain.
+7. Electronics OR Furniture category.
+8. Products ko price ascending order mein arrange karo.
+9. First 5 products skip karke next 5 show karo.
