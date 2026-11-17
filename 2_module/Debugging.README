@@ -1,0 +1,27 @@
+Part 6 – Debugging Exercises
+Debugging 1
+
+SELECT *
+FROM students
+WHERE age => 22;
+
+
+Identify and fix the mistake.
+Debugging 2
+
+SELECT *
+FROM students
+WHERE city = 'Delhi'
+AND OR age > 22;
+
+
+Identify and fix the syntax mistake.
+Debugging 3
+
+SELECT *
+FROM students
+ORDER BY fees DESC
+LIMIT -5;
+
+
+Identify the issue and write the correct query for retrieving the top 5 expensive students.
