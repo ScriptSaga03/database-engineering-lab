@@ -1,0 +1,336 @@
+Module 2 – Filtering & Sorting Data
+Intermediate Beginner
+Module 02 / 10
+Started
+
+Module objective: Abhi tak tumne database se saara data retrieve kiya hai. Ab seekhenge ki thousands of records mein se sirf required records kaise retrieve karte hain, aur unhe properly sort kaise karte hain.
+Module roadmap
+Lesson	Concept
+1	WHERE Clause
+2	Comparison Operators
+3	AND Operator
+4	OR Operator
+5	NOT Operator
+6	IN Operator
+7	BETWEEN Operator
+8	LIKE Operator
+9	ORDER BY
+10	LIMIT
+11	Combining Filtering & Sorting
+
+Har lesson mein Theory → Syntax → Examples → Workbook follow karenge.
+
+Part 1 – Theory & Syntax
+Lesson 1: WHERE Clause
+Easy
+Theory
+WHERE clause ka use table se specific conditions ke according records retrieve karne ke liye hota hai.
+
+Jab tumhe complete table nahi, balki sirf particular records chahiye hote hain, tab WHERE use karte hain.
+
+Real-world analogy: Restaurant mein waiter ko bolna: "Mujhe sirf ₹200 se kam wali dishes dikhana."
+Syntax
+SELECT column_name
+FROM table_name
+WHERE condition;
+
+
+Example 1: Specific city ke students
+SELECT *
+FROM students
+WHERE city = 'Delhi';
+
+
+Example 2: Specific course ke students
+SELECT full_name, course
+FROM students
+WHERE course = 'Full Stack Development';
+
+
+Samjho execution:
+students table
+
+10 records
+
+
+WHERE city = 'Delhi'
+
+Condition checking
+
+
+Matching records
+Filtered result
+
+
+
+Lesson 2: Comparison Operators
+Theory
+Comparison operators ka use do values compare karne ke liye hota hai. WHERE ke saath inka use karke hum numeric aur text conditions check kar sakte hain.
+
+Analogy: Calculator mein check karna ki 500, 300 se bada hai ya nahi.
+Operators
+Operator	Meaning
+=	Equal to
+!=	Not equal to
+<>	Not equal to
+>	Greater than
+<	Less than
+>=	Greater than or equal
+<=	Less than or equal
+
+Examples
+Example 1: Age greater than 22
+SELECT *
+FROM students
+WHERE age > 22;
+
+
+Example 2: Fees less than or equal to 40000
+SELECT full_name, fees
+FROM students
+WHERE fees <= 40000;
+
+
+Example 3: Delhi ko chhodkar baaki cities
+SELECT *
+FROM students
+WHERE city != 'Delhi';
+
+
+Important: NULL comparison
+NULL ko normal = operator se compare nahi karte.
+SELECT *
+FROM students
+WHERE fees IS NULL;
+
+
+Aur:
+SELECT *
+FROM students
+WHERE fees IS NOT NULL;
+
+
+Is concept ko abhi basic level par samjho; NULL handling ko baad mein detail mein cover karenge.
+
+Lesson 3: AND Operator
+Theory
+AND operator tab use hota hai jab multiple conditions ek saath satisfy honi chahiye.
+
+Analogy: Job requirement: Candidate ki age 21+ bhi honi chahiye AND experience 2+ years bhi.
+Syntax
+SELECT *
+FROM table_name
+WHERE condition1 AND condition2;
+
+
+Example
+Students jinki age 22 se zyada hai aur city Delhi hai:
+SELECT *
+FROM students
+WHERE age > 22
+AND city = 'Delhi';
+
+
+Important: AND mein dono conditions TRUE honi chahiye.
+
+Lesson 4: OR Operator
+Theory
+OR operator ka use tab hota hai jab multiple conditions mein se koi ek bhi TRUE ho toh record return ho sakta hai.
+
+Analogy: Restaurant mein tum Pizza OR Burger order kar sakte ho.
+Syntax
+SELECT *
+FROM table_name
+WHERE condition1 OR condition2;
+
+
+Example
+SELECT *
+FROM students
+WHERE city = 'Delhi'
+OR city = 'Noida';
+
+
+Yahan Delhi ya Noida mein se kisi bhi city ke students return honge.
+AND vs OR
+AND	OR
+All conditions TRUE	At least one condition TRUE
+More restrictive	Less restrictive
+
+
+Lesson 5: NOT Operator
+Theory
+NOT operator kisi condition ka opposite result deta hai.
+
+Analogy: "Mujhe Delhi ke students nahi chahiye."
+Syntax
+SELECT *
+FROM table_name
+WHERE NOT condition;
+
+
+Example:
+SELECT *
+FROM students
+WHERE NOT city = 'Delhi';
+
+
+Equivalent:
+SELECT *
+FROM students
+WHERE city != 'Delhi';
+
+
+
+Lesson 6: IN Operator
+Theory
+IN operator multiple possible values ko check karne ke liye use hota hai. Ye multiple OR conditions ka cleaner alternative hai.
+
+Analogy: Shopping list mein 3 acceptable brands select karna.
+Syntax
+SELECT *
+FROM table_name
+WHERE column_name IN (value1, value2, value3);
+
+
+Example:
+SELECT *
+FROM students
+WHERE city IN ('Delhi', 'Noida', 'Mumbai');
+
+
+Equivalent:
+SELECT *
+FROM students
+WHERE city = 'Delhi'
+OR city = 'Noida'
+OR city = 'Mumbai';
+
+
+NOT IN:
+SELECT *
+FROM students
+WHERE city NOT IN ('Delhi', 'Noida');
+
+
+
+Lesson 7: BETWEEN Operator
+Theory
+BETWEEN ka use kisi value ko specified range ke andar check karne ke liye hota hai.
+
+Analogy: Exam mein 60 se 80 marks ke beech score karne wale students select karna.
+Syntax
+SELECT *
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+
+Example:
+SELECT *
+FROM students
+WHERE age BETWEEN 20 AND 25;
+
+
+Important
+ BETWEEN inclusive hota hai. Matlab 20 aur 25 dono include honge.
+
+NOT BETWEEN:
+SELECT *
+FROM students
+WHERE age NOT BETWEEN 20 AND 25;
+
+
+
+Lesson 8: LIKE Operator
+Theory
+LIKE ka use text ke andar pattern matching ke liye hota hai. Jab exact value nahi pata hoti, lekin text ka kuch part pata hota hai, tab ye useful hai.
+
+Analogy: Contact list mein aise log search karna jinka naam 'Rah' se start hota hai.
+Wildcards
+Wildcard	Meaning
+%	Zero or more characters
+_	Exactly one character
+
+Examples
+1. Name starts with A
+SELECT *
+FROM students
+WHERE full_name LIKE 'A%';
+
+
+2. Name ends with a
+SELECT *
+FROM students
+WHERE full_name LIKE '%a';
+
+
+3. Name contains 'ha'
+SELECT *
+FROM students
+WHERE full_name LIKE '%ha%';
+
+
+4. Exactly one character wildcard
+SELECT *
+FROM students
+WHERE full_name LIKE 'A_an';
+
+
+
+Lesson 9: ORDER BY
+Theory
+ORDER BY ka use retrieved records ko ascending ya descending order mein arrange karne ke liye hota hai.
+
+Analogy: School mein students ko marks ke highest-to-lowest order mein arrange karna.
+Syntax
+SELECT *
+FROM table_name
+ORDER BY column_name ASC;
+
+
+ASC – Ascending
+SELECT *
+FROM students
+ORDER BY age ASC;
+
+
+Smallest to largest.
+DESC – Descending
+SELECT *
+FROM students
+ORDER BY fees DESC;
+
+
+Largest to smallest.
+Multiple columns sorting
+SELECT *
+FROM students
+ORDER BY city ASC, age DESC;
+
+
+Pehle city ascending, phir same city ke records age descending.
+
+Lesson 10: LIMIT
+Theory
+LIMIT ka use query se return hone wale records ki maximum quantity control karne ke liye hota hai.
+
+Analogy: YouTube par sirf top 5 search results dekhna.
+Syntax
+SELECT *
+FROM table_name
+LIMIT number;
+
+
+Example:
+SELECT *
+FROM students
+LIMIT 5;
+
+
+LIMIT with OFFSET
+SELECT *
+FROM students
+LIMIT 5 OFFSET 5;
+
+
+Iska matlab: Pehle 5 records skip karo aur next 5 records return karo.
