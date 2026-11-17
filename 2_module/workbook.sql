@@ -1,3 +1,187 @@
+
+/*
+Part 2 – Workbook (Guided Practice)
+Ab hum tumhare existing student_management_db database ko use karenge.
+
+Important: Tumhari original 10 students wali table ko use karenge. Pehle verify kar lo:
+USE student_management_db;
+
+SELECT * FROM students;
+
+
+Step 1 – Basic Filtering
+Easy
+Reminder: WHERE specific records filter karta hai.
+
+Task:
+1. Delhi ke students find karo.
+2. Web Designing course ke students find karo.
+3. Age 22 wale students find karo.
+Starter code:
+-- Task 1
+SELECT *
+FROM students
+WHERE ________;
+
+-- Task 2
+SELECT *
+FROM students
+WHERE ________;
+
+-- Task 3
+SELECT *
+FROM students
+WHERE ________;
+
+
+Step 2 – Comparison Operators
+Easy
+Reminder: Comparison operators values compare karte hain.
+
+Task:
+1. Age greater than 22.
+2. Fees greater than 40000.
+3. Age less than or equal to 21.
+4. Fees not equal to 54000.
+Starter code:
+-- Task 1
+
+
+-- Task 2
+
+
+-- Task 3
+
+
+-- Task 4
+
+
+Step 3 – AND & OR
+Intermediate
+Reminder: AND mein all conditions true, OR mein at least one condition true.
+
+Task:
+1. Delhi ke students jinki age 24 hai.
+2. Delhi ya Mumbai ke students.
+3. Age greater than 20 AND fees greater than 35000.
+4. Full Stack Development OR Backend Development students.
+Starter code:
+-- Task 1
+
+
+-- Task 2
+
+
+-- Task 3
+
+
+-- Task 4
+
+
+Step 4 – IN & BETWEEN
+Intermediate
+Task:
+1. Delhi, Noida aur Mumbai ke students.
+2. Age 20 se 25 ke beech.
+3. Fees 30000 se 55000 ke beech.
+4. Aise students jo Delhi aur Mumbai mein nahi rehte.
+Starter code:
+-- Task 1
+
+
+-- Task 2
+
+
+-- Task 3
+
+
+-- Task 4
+
+
+Step 5 – LIKE
+Challenging
+Task:
+1. Aise students jinka naam M se start hota hai.
+2. Aise students jinka naam a se end hota hai.
+3. Aise students jinke naam mein Sharma present hai.
+4. Aise students jinke naam mein ha present hai.
+Starter code:
+-- Task 1
+
+
+-- Task 2
+
+
+-- Task 3
+
+
+-- Task 4
+
+
+Step 6 – ORDER BY & LIMIT
+Challenging
+Task:
+1. Students ko age ascending order mein arrange karo.
+2. Students ko fees descending order mein arrange karo.
+3. Top 3 highest-fee students find karo.
+4. Top 5 youngest students find karo.
+5. First 5 students skip karke next 5 retrieve karo.
+Starter code:
+-- Task 1
+
+
+-- Task 2
+
+
+-- Task 3
+
+
+-- Task 4
+
+
+-- Task 5
+
+
+Step 7 – Guided Mini Workbook Project
+Project: Student Search & Ranking System
+
+Tumhe college ke liye student search system banana hai.
+
+Requirements:
+- Delhi ke students retrieve karo.
+- Age 20–25 ke students find karo.
+- Fees 40000 se zyada wale students retrieve karo.
+- Top 3 highest-fee students find karo.
+- Full Stack Development aur Web Designing students find karo.
+- Names containing a find karo.
+Starter:
+USE student_management_db;
+
+-- 1. City filter
+
+
+-- 2. Age range
+
+
+-- 3. Fees filter
+
+
+-- 4. Top 3 students
+
+
+-- 5. Course filter
+
+
+-- 6. Name pattern search
+
+
+
+*/
+
+
+
+
+
 USE student_management_db;
 SHOW TABLES;
  
